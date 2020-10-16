@@ -1,0 +1,47 @@
+/**
+ * create user table sql
+ */
+create table bankingapp.user (
+id integer(11)  not null auto_increment primary key,
+first_name varchar(100) not null,
+last_name varchar(100) not null,
+email varchar(255)  not null unique,
+password varchar(255) not null,
+role varchar(100) not null
+)
+
+/**
+ * create products table sql
+ */
+create table bankingapp.products (
+id integer(11)  not null auto_increment primary key,
+name varchar(255) not null,
+description varchar(255) not null,
+price float not null ,
+currency varchar(10) not null
+)
+
+/**
+ * create order table sql
+ */
+ create table bankingapp.orders (
+     id integer(11) not null auto_increment primary key,
+     user_id integer(11) not null,
+     payment_id varchar(255) not null,
+     payer_id varchar(255) not null,
+     payment_total float not null,
+     created_at timestamp,
+     foreign key(user_id) references bankingapp.user(id)
+ )
+
+ /**
+ * create order_items table sql
+ */
+ create table bankingapp.order_items (
+     id integer(11) not null auto_increment primary key,
+     product_id integer(11) not null,
+     order_id integer(11) not null,
+     created_at timestamp,
+     foreign key(order_id) references bankingapp.orders(id),
+     foreign key(product_id) refernces bankingapp.products(id)
+ )
