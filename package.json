@@ -19,5 +19,14 @@
     "nodemon": "^2.0.4",
     "router": "^1.3.5",
     "sessionstorage": "^0.1.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsmvannan/nodeApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rsmvannan/nodeApp/issues"
+  },
+  "homepage": "https://github.com/rsmvannan/nodeApp#readme"
 }
