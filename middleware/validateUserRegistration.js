@@ -11,7 +11,7 @@ const inputValidator =  async (req,res,next) => {
         role: 'required'
       });
 
-      inputCheck.check().then(async(matched) => {
+      inputCheck.check().then((matched) => {
            
             if(!matched) {
                 return res.status(422).send(inputCheck.errors);
